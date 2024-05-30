@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.actions.client" id="file_upload">
+          <field name="name">3D预览</field>
+          <field name="tag">file_upload.file_upload</field>
+        </record>
+    </data>
+</odoo>

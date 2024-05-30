@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+
+    <t t-name="file_upload.FileUpload">
+        <div class="container">
+            <div class="msg-box">
+                <div>
+                    <FileChunkUpload fileChange="onFileChangedEvent" />
+                </div>
+                <div style="margin-top: 20px">
+                    <FileDragUploader fileChange="onFileChangedEvent" />
+                </div>
+
+                <div style="height: 2px; background-color: #666; margin: 10px"></div>
+                <p>
+                    1、如果你看到这个界面，证明文件上传模块已经安装成功，数据库应该多了file_upload表
+                </p>
+                <p>
+                    <p>2、使用【POST】方法往以下接口上传单个文件：</p>
+                    <p>http://example.com/file_upload/upload</p>
+                    <p>【multipart-form】</p>
+                    <p>【{file: FileObj}】</p>
+                </p>
+
+                <p>3、使用【POST】方法往以下接口上传文件分片</p>
+                <p>
+                    <p>http://example.com/file_upload/upload/chunk</p>
+                    <p>【multipart-form】</p>
+                    <p>
+                        【{file: FileObj, chunkNumber: 1, totalChunks: 2, filename: 'filename', uploadId: 'uploadId'}】
+                    </p>
+                </p>
+
+                <button class="btn btn-primary" t-on-click="testFunc">测试函数</button>
+            </div>
+
+            <!-- <button type="btn btn-primary" t-on-click="openDialog">弹窗</button> -->
+
+            <div class="preview-box">
+                <Preview3D fileUrl="state.fileAddr" fileType="state.fileType" />
+            </div>
+        </div>
+    </t>
+
+</template>

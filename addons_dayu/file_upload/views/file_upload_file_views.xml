@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="file_upload_file_view_action" model="ir.actions.act_window">
+            <field name="name">文件列表</field>
+            <field name="res_model">file.upload</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 文件列表 -->
+        <record id="file_upload_file_tree" model="ir.ui.view">
+            <field name="name">文件列表</field>
+            <field name="model">file.upload</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="file_url"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!-- form视图 -->
+        <record id="file_upload_file_form" model="ir.ui.view">
+            <field name="name">文件数据</field>
+            <field name="model">file.upload</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!-- Other form elements -->
+                    <sheet>
+                        <h1><field name="name" nolabel="1" readonly="1" /></h1>
+                        <notebook>
+                            <page string="图形">
+                                <!-- 显示3D预览 -->
+                                <div>这里需要显示自定义预览3D的组件</div>
+                                <field name="file_url" fileUrl="'123'" fileType="'abc'" widget="preview3DWidget" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

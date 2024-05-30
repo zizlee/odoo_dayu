@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+    <t t-name="file_upload.FileDragUploader">
+        <div class="file-uploader">
+            <div class="drop-zone" t-on-drop="onDrop" t-on-dragover="onDragOver" t-on-click="triggerFileInput">
+                将文件拖到这里上传
+            </div>
+            <input type="file" class="btn btn-primary" style="display: none;" t-on-change="onFileChange" t-ref="fileInput" />
+            <ul>
+                <li t-foreach="state.files" t-as="file" t-key="file.name">
+                    <span t-esc="file.name"/>
+                </li>
+            </ul>
+        </div>
+    </t>
+</template>

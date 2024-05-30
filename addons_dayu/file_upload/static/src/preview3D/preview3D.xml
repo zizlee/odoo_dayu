@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<template>
+    <t t-name="file_upload.Preview3D">
+        <div>
+             <div>
+                3D文件预览窗口:
+                <t t-esc="props.fileUrl" />
+            </div>
+            <div>
+                <button t-on-click="clearScene">清除场景</button>
+                <button t-on-click="(e) => render3DModel()">再次渲染</button>
+            </div>
+            <div class="pre-canvas" t-ref="canvas3d" />
+        </div>
+    </t>
+</template>
